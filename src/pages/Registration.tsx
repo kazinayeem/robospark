@@ -215,7 +215,13 @@ const App: React.FC = () => {
         body: JSON.stringify(formData),
       });
 
-      Swal.fire("Success", "Your team has been registered!", "success");
+    Swal.fire({
+  title: "Success",
+  html: 'Your team has been registered!<br>Please check your email (<b>Inbox</b> & <b style="color:#e74c3c;">Spam</b>).',
+  icon: "success",
+  confirmButtonText: "Got it"
+});
+
 
       setFormData({
         teamName: "",
@@ -533,3 +539,4 @@ const App: React.FC = () => {
 };
 
 export default App;
+

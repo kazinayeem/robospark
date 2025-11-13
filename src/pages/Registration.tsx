@@ -64,8 +64,15 @@ const App: React.FC = () => {
       const snap = await getDocs(collection(db, "coupons"));
       const list: any[] = [];
 
-      snap.forEach((doc) => {
-        list.push(doc.data());
+      snap.forEach((docSnap) => {
+        const d = docSnap.data();
+
+        list.push({
+          id: docSnap.id,
+          name: d.name?.trim() || "",
+          code: d.code?.toString().trim().toUpperCase(),
+          percentage: Number(d.percentage) || 0,
+        });
       });
 
       setCouponList(list);
@@ -157,17 +164,10 @@ const App: React.FC = () => {
     const couponObj = couponList.find(
       (c) => c.code.toUpperCase() === formData.couponCode.toUpperCase()
     );
-
     if (couponObj) {
-      // Check expiry
-      const today = new Date().toISOString().split("T")[0];
-      const isExpired =
-        couponObj.expires !== "N/A" && couponObj.expires < today;
-
-      if (couponObj.isActive && !isExpired) {
         discountPercent = couponObj.percentage;
         discountAmount = Math.floor((subtotal * discountPercent) / 100);
-      }
+      
     }
 
     const total = subtotal - discountAmount;
@@ -208,11 +208,7 @@ const App: React.FC = () => {
         fees: calculatedFees,
         registeredAt: serverTimestamp(),
       });
-      // await fetch("http://localhost:5000/api/register-mail", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify(formData),
-      // });
+
       Swal.fire("Success", "Your team has been registered!", "success");
 
       setFormData({

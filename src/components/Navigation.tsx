@@ -51,7 +51,7 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <span className="text-2xl font-orbitron font-bold gradient-text">
-              IntraSpark
+              RoboSpark
             </span>
             <span className="text-sm text-primary font-orbitron">2025</span>
           </Link>
@@ -137,3 +137,4 @@ const Navigation = () => {
 };
 
 export default Navigation;
+

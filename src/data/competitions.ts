@@ -1,0 +1,86 @@
+export const competitions = [
+  {
+    id: "drone-race",
+    title: "Drone Challenge",
+    description: "Navigate autonomous drones through aerial tracks.",
+    icon: "☣",
+    totalPrize: 60000,
+    prizeBreakdown: {
+      champion: 30000,
+      firstRunnerUp: 20000,
+      secondRunnerUp: 10000,
+    },
+    baseFee: 2000,
+    baseTeamSize: 3,
+    extraPerMember: 600,
+    maxTeamSize: 6,
+  },
+
+  {
+    id: "line-following",
+    title: "Line Following Robot",
+    description: "High-speed precision robot racing track.",
+    icon: "🤖",
+    totalPrize: 23000,
+    prizeBreakdown: {
+      champion: 10000,
+      firstRunnerUp: 8000,
+      secondRunnerUp: 5000,
+    },
+    baseFee: 1500,
+    baseTeamSize: 3,
+    extraPerMember: 500,
+    maxTeamSize: 6,
+  },
+
+  {
+    id: "soccerbot",
+    title: "SoccerBot",
+    description: "Build robots to compete in autonomous soccer.",
+    icon: "⚽",
+    totalPrize: 23000,
+    prizeBreakdown: {
+      champion: 10000,
+      firstRunnerUp: 8000,
+      secondRunnerUp: 5000,
+    },
+    baseFee: 1500,
+    baseTeamSize: 3,
+    extraPerMember: 500,
+    maxTeamSize: 6,
+  },
+
+  {
+    id: "techathon",
+    title: "Techathon",
+    description: "6-hour hackathon to develop AI/software innovation.",
+    icon: "💻",
+    totalPrize: 45000,
+    prizeBreakdown: {
+      champion: 20000,
+      firstRunnerUp: 15000,
+      secondRunnerUp: 10000,
+    },
+    baseFee: 2000,
+    baseTeamSize: 3,
+    extraPerMember: 600,
+    maxTeamSize: 6,
+  },
+
+  {
+    id: "Cozmo-Clench",
+    title: "Cozmo Clench",
+    description: "Robotic machine to clear simulated debris.",
+    icon: "✨",
+    totalPrize: 23000,
+    prizeBreakdown: {
+      champion: 10000,
+      firstRunnerUp: 8000,
+      secondRunnerUp: 5000,
+    },
+    baseFee: 1500,
+    baseTeamSize: 3,
+    extraPerMember: 500,
+    maxTeamSize: 6,
+  },
+];

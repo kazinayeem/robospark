@@ -253,7 +253,7 @@ const App = () => {
                 Contact 
               </h1>
               <p className="text-xl md:text-2xl text-indigo-300 font-light tracking-wide">
-                Establish direct link with the IntraSpark Command Center
+                Establish direct link with the RoboSpark Command Center
               </p>
             </motion.div>
           </div>

@@ -116,7 +116,7 @@ const Dashboard = () => {
               Registration Dashboard
             </h1>
             <p className="text-xl text-muted-foreground">
-              View and manage all team registrations for IntraSpark 2026
+              View and manage all team registrations for RoboSpark 2026
             </p>
           </motion.div>
         </div>

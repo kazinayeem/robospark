@@ -43,7 +43,7 @@ const SponsorSection = () => {
       size: "lg",
     },
     {
-      name: "IntraSpark",
+      name: "RoboSpark",
       tier: "Event Partner",
       logoUrl: "/sponsor3.png",
       size: "md",
@@ -140,7 +140,7 @@ const Footer = () => {
           <div>
             <h3 className="text-2xl font-bold mb-4">
               <GradientText className="font-orbitron">
-                IntraSpark 2026
+                RoboSpark 2026
               </GradientText>
             </h3>
             <p className="text-gray-400 mb-4">
@@ -230,7 +230,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="border-t border-gray-700/50 mt-12 pt-8 text-center text-sm text-gray-500">
           <p>
-            © {currentYear} IntraSpark. All rights reserved. | DIU Robotics Club
+            © {currentYear} RoboSpark. All rights reserved. | DIU Robotics Club
           </p>
         </div>
       </div>

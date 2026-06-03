@@ -78,7 +78,7 @@ const App: React.FC = () => {
   ];
 
   const eventOverview =
-    "IntraSpark 2026 is a premier inter-university robotics and technology competition that brings together the brightest minds from across the country. Organized by the DIU Robotics Club at Daffodil International University, this two-day event showcases cutting-edge innovations in robotics, automation, and software development.";
+    "RoboSpark 2026 is a premier inter-university robotics and technology competition that brings together the brightest minds from across the country. Organized by the DIU Robotics Club at Daffodil International University, this two-day event showcases cutting-edge innovations in robotics, automation, and software development.";
 
   const eventChallenges =
     "With five diverse competitions including Drone Challenge, Line Following Robot, Techathon, Robot Soccer, and Cosmo Cleanse, participants will face exciting challenges that test their technical skills, creativity, and teamwork.";
@@ -147,7 +147,7 @@ const App: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 className="font-orbitron gradient-text uppercase no-break text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight"
               >
-                IntraSpark
+                RoboSpark
               </motion.h1>
 
               <p className="mt-4 inline-block text-indigo-300 text-sm sm:text-base md:text-lg border-t border-b border-indigo-500/30 py-2 px-4">

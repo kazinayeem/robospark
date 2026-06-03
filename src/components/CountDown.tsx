@@ -35,7 +35,7 @@ const CustomStyles = () => (
     `}</style>
 );
 
-const targetDate = new Date("2025-12-07T00:00:00");
+const targetDate = new Date("2026-09-01T00:00:00");
 
 const TimeSegment = ({ value, label }) => {
   const colorClass =

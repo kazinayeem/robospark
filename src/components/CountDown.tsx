@@ -108,7 +108,7 @@ export const CountdownTimer = () => {
           className="text-xl md:text-3xl font-bold text-center text-cyan-400 mb-8 
                      font-orbitron neon-glow-cyan"
         >
-          Event Starts: December 7, 2025
+          Event Starts:  September 2026
         </motion.h3>
 
         <div className="flex justify-center gap-3 sm:gap-4 md:gap-5 flex-wrap">

@@ -74,7 +74,7 @@ const Index = () => {
     },
     {
       title: "Techathon",
-      description: "36-hour hackathon to develop AI/software innovation.",
+      description: "12-hour hackathon to develop AI/software innovation.",
       icon: "💻",
       prize: "50,000",
       fee: "2,000",

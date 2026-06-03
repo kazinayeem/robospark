@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Trophy, Users, DollarSign } from "lucide-react";
-import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 interface CompetitionCardProps {
   title: string;
@@ -71,12 +71,17 @@ const CompetitionCard = ({
       </div>
 
       <Button
-        asChild
+        onClick={() =>
+          Swal.fire({
+            icon: "info",
+            title: "Upcoming",
+            text: "Registration will open soon! Stay tuned.",
+            confirmButtonColor: "#06b6d4",
+          })
+        }
         className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-orbitron font-semibold"
       >
-        <Link to={`/register?competition=${encodeURIComponent(title)}`}>
-          Register Now
-        </Link>
+        Register Now
       </Button>
     </motion.div>
   );

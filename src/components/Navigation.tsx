@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import ScrollToTop from "./ScrollToTop";
+import Swal from "sweetalert2";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,7 +30,7 @@ const Navigation = () => {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Competitions", path: "/competitions" },
-    { name: "Register", path: "/register" },
+    { name: "Register", path: "/register", upcoming: true },
     ...(isAuthenticated ? [{ name: "Dashboard", path: "/dashboard" }] : []),
     { name: "Contact", path: "/contact" },
   ];
@@ -53,29 +54,53 @@ const Navigation = () => {
             <span className="text-2xl font-orbitron font-bold gradient-text">
               RoboSpark
             </span>
-            <span className="text-sm text-primary font-orbitron">2025</span>
+            <span className="text-sm text-primary font-orbitron">2026</span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`font-medium transition-all duration-300 hover:text-primary ${
-                  location.pathname === link.path
-                    ? "text-primary text-glow-primary"
-                    : "text-foreground"
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
+            {navLinks.map((link) =>
+              link.upcoming ? (
+                <button
+                  key={link.path}
+                  onClick={() =>
+                    Swal.fire({
+                      icon: "info",
+                      title: "Upcoming",
+                      text: "Registration will open soon! Stay tuned.",
+                      confirmButtonColor: "#06b6d4",
+                    })
+                  }
+                  className={`font-medium transition-all duration-300 hover:text-primary text-foreground`}
+                >
+                  {link.name}
+                </button>
+              ) : (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`font-medium transition-all duration-300 hover:text-primary ${
+                    location.pathname === link.path
+                      ? "text-primary text-glow-primary"
+                      : "text-foreground"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              )
+            )}
             <Button
-              asChild
+              onClick={() =>
+                Swal.fire({
+                  icon: "info",
+                  title: "Upcoming",
+                  text: "Registration will open soon! Stay tuned.",
+                  confirmButtonColor: "#06b6d4",
+                })
+              }
               className="bg-primary text-primary-foreground hover:bg-primary/90 font-orbitron font-semibold glow-border"
             >
-              <Link to="/register">Register Now</Link>
+              Register Now
             </Button>
           </div>
 
@@ -105,28 +130,52 @@ const Navigation = () => {
         px-4 py-5
       "
             >
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block py-2 font-medium transition-all duration-300 hover:text-primary ${
-                    location.pathname === link.path
-                      ? "text-primary text-glow-primary"
-                      : "text-foreground"
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
+              {navLinks.map((link) =>
+                link.upcoming ? (
+                  <button
+                    key={link.path}
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      Swal.fire({
+                        icon: "info",
+                        title: "Upcoming",
+                        text: "Registration will open soon! Stay tuned.",
+                        confirmButtonColor: "#06b6d4",
+                      });
+                    }}
+                    className={`block w-full text-left py-2 font-medium transition-all duration-300 hover:text-primary text-foreground`}
+                  >
+                    {link.name}
+                  </button>
+                ) : (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`block py-2 font-medium transition-all duration-300 hover:text-primary ${
+                      location.pathname === link.path
+                        ? "text-primary text-glow-primary"
+                        : "text-foreground"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                )
+              )}
 
               <Button
-                asChild
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  Swal.fire({
+                    icon: "info",
+                    title: "Upcoming",
+                    text: "Registration will open soon! Stay tuned.",
+                    confirmButtonColor: "#06b6d4",
+                  });
+                }}
                 className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-orbitron font-semibold"
               >
-                <Link to="/register" onClick={() => setIsMobileMenuOpen(false)}>
-                  Register Now
-                </Link>
+                Register Now
               </Button>
             </motion.div>
           )}

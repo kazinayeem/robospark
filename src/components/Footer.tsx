@@ -7,6 +7,7 @@ import {
   Mail,
   Phone,
 } from "lucide-react";
+import Swal from "sweetalert2";
 
 const Link = (props) => (
   <a
@@ -120,7 +121,7 @@ const Footer = () => {
     { name: "Home", path: "#/" },
     { name: "About", path: "/about" },
     { name: "Competitions", path: "/competitions" },
-    { name: "Register", path: "/register" },
+    { name: "Register", path: "/register", upcoming: true },
     { name: "Contact", path: "/contact" },
   ];
 
@@ -139,7 +140,7 @@ const Footer = () => {
           <div>
             <h3 className="text-2xl font-bold mb-4">
               <GradientText className="font-orbitron">
-                IntraSpark 2025
+                IntraSpark 2026
               </GradientText>
             </h3>
             <p className="text-gray-400 mb-4">
@@ -159,12 +160,28 @@ const Footer = () => {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    className="text-gray-400 hover:text-indigo-400 transition-colors duration-300"
-                  >
-                    {link.name}
-                  </Link>
+                  {link.upcoming ? (
+                    <button
+                      onClick={() =>
+                        Swal.fire({
+                          icon: "info",
+                          title: "Upcoming",
+                          text: "Registration will open soon! Stay tuned.",
+                          confirmButtonColor: "#06b6d4",
+                        })
+                      }
+                      className="text-gray-400 hover:text-indigo-400 transition-colors duration-300"
+                    >
+                      {link.name}
+                    </button>
+                  ) : (
+                    <Link
+                      to={link.path}
+                      className="text-gray-400 hover:text-indigo-400 transition-colors duration-300"
+                    >
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

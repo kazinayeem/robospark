@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
@@ -8,6 +9,7 @@ import {
   ClipboardCheck,
   Coffee,
 } from "lucide-react";
+import Swal from "sweetalert2";
 
 import heroBg from "@/assets/hero-bg.png";
 import { Button } from "@/components/ui/button";
@@ -15,6 +17,16 @@ import { CountdownTimer } from "@/components/CountDown";
 import CompetitionCard from "@/components/CompetitionCard";
 
 const Index = () => {
+  useEffect(() => {
+    Swal.fire({
+      icon: "info",
+      title: "Upcoming Event",
+      text: "RoboSpark 2026 is coming soon! Please stay with us.",
+      confirmButtonColor: "#06b6d4",
+      confirmButtonText: "Stay Tuned",
+    });
+  }, []);
+
   // --- HIGHLIGHTS (UPDATED, CLEANED) ---
   const highlights = [
     {
@@ -124,7 +136,7 @@ const Index = () => {
               <span className="bg-gradient-to-r from-cyan-400 to-indigo-500 bg-clip-text text-transparent">
                 RoboSpark
               </span>{" "}
-              2025
+              2026
             </h1>
 
             <p className="text-xl md:text-2xl text-indigo-300 mb-10 max-w-3xl mx-auto">
@@ -133,11 +145,18 @@ const Index = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <Button
-                asChild
                 size="lg"
+                onClick={() =>
+                  Swal.fire({
+                    icon: "info",
+                    title: "Upcoming",
+                    text: "Registration will open soon! Stay tuned.",
+                    confirmButtonColor: "#06b6d4",
+                  })
+                }
                 className="font-orbitron bg-cyan-500 text-black hover:bg-cyan-400 text-lg px-10"
               >
-                <Link to="/register">Register Now</Link>
+                Register Now
               </Button>
 
               <Button
@@ -179,7 +198,7 @@ const Index = () => {
             </h2>
 
             <p className="text-lg text-gray-200 leading-relaxed">
-              RoboSpark 2025 is an inter-university robotics and technology
+              RoboSpark 2026 is an inter-university robotics and technology
               competition hosted by DIU Robotics Club. A celebration of
               engineering excellence, creativity, and innovation.
             </p>
@@ -306,12 +325,12 @@ const Index = () => {
             className="bg-gray-900/60 border border-indigo-600/40 rounded-2xl p-8 mb-12"
           >
             <h3 className="text-2xl font-orbitron font-bold text-indigo-400 mb-4">
-              RoboSpark 2025 Event Details
+              RoboSpark 2026 Event Details
             </h3>
 
             <p className="text-gray-300 text-lg mb-2">
               <span className="font-bold text-cyan-300">Date:</span> 7th
-              December, 2025
+              December, 2026
             </p>
 
             <p className="text-gray-300 text-lg mb-2">
@@ -406,15 +425,22 @@ const Index = () => {
 
             <p className="text-xl text-indigo-200 mb-8 max-w-3xl mx-auto">
               Register your team now and join the most exciting robotics event
-              of 2025!
+              of 2026!
             </p>
 
             <Button
-              asChild
               size="lg"
+              onClick={() =>
+                Swal.fire({
+                  icon: "info",
+                  title: "Upcoming",
+                  text: "Registration will open soon! Stay tuned.",
+                  confirmButtonColor: "#06b6d4",
+                })
+              }
               className="bg-cyan-500 hover:bg-cyan-400 text-black font-orbitron text-lg px-16"
             >
-              <Link to="/register">Register Your Team</Link>
+              Register Your Team
             </Button>
           </motion.div>
         </div>

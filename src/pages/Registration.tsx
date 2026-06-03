@@ -249,7 +249,7 @@ const App: React.FC = () => {
     <div className="min-h-screen pt-32 bg-gradient-to-br from-gray-950 via-indigo-900 to-black text-white p-6">
       <div className="text-center">
         <h1 className="text-5xl md:text-6xl font-['Orbitron'] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">
-          ROBOSPARK 2025
+          ROBOSPARK 2026
         </h1>
         <p className="text-cyan-200 mt-3 text-lg">
           Team Registration – Max 6 Members
@@ -259,7 +259,15 @@ const App: React.FC = () => {
       <CountdownTimer />
 
       <form
-        onSubmit={submitForm}
+        onSubmit={(e) => {
+          e.preventDefault();
+          Swal.fire({
+            icon: "info",
+            title: "Upcoming",
+            text: "Registration will open soon! Stay tuned.",
+            confirmButtonColor: "#06b6d4",
+          });
+        }}
         className="max-w-4xl mx-auto bg-gray-900/70 p-10 rounded-2xl shadow-2xl border border-cyan-700/30 mt-10 space-y-10"
       >
         {/* TEAM INFO */}
@@ -528,7 +536,15 @@ const App: React.FC = () => {
         </section>
 
         <button
-          type="submit"
+          type="button"
+          onClick={() =>
+            Swal.fire({
+              icon: "info",
+              title: "Upcoming",
+              text: "Registration will open soon! Stay tuned.",
+              confirmButtonColor: "#06b6d4",
+            })
+          }
           className="w-full py-4 bg-cyan-600 rounded-xl text-black font-bold text-xl hover:bg-cyan-500"
         >
           Submit Registration

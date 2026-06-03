@@ -78,7 +78,7 @@ const App: React.FC = () => {
   ];
 
   const eventOverview =
-    "IntraSpark 2025 is a premier inter-university robotics and technology competition that brings together the brightest minds from across the country. Organized by the DIU Robotics Club at Daffodil International University, this two-day event showcases cutting-edge innovations in robotics, automation, and software development.";
+    "IntraSpark 2026 is a premier inter-university robotics and technology competition that brings together the brightest minds from across the country. Organized by the DIU Robotics Club at Daffodil International University, this two-day event showcases cutting-edge innovations in robotics, automation, and software development.";
 
   const eventChallenges =
     "With five diverse competitions including Drone Challenge, Line Following Robot, Techathon, Robot Soccer, and Cosmo Cleanse, participants will face exciting challenges that test their technical skills, creativity, and teamwork.";
